@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Employee } from '../types/Employee';
 import { fetchEmployees } from '../services/api';
+import '../styles.css';
 
 const EmployeeList: React.FC = () => {
     const [employees, setEmployees] = useState<Employee[]>([]);
@@ -31,7 +32,7 @@ const EmployeeList: React.FC = () => {
     }
 
     return (
-        <div>
+        <div className="employee-list">
             <h2>Employee List</h2>
             <ul>
                 {employees.map(employee => (

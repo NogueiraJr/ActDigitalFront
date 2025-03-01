@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Employee } from '../types/Employee';
 import { createEmployee, updateEmployee } from '../services/api';
+import '../styles.css';
 
 interface EmployeeFormProps {
     employee?: Employee;
@@ -39,7 +40,7 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({ employee, onSubmitSuccess }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="employee-form" onSubmit={handleSubmit}>
             <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" required />
             <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last Name" required />
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchEmployeeById } from '../services/api';
 import { Employee } from '../types/Employee';
+import '../styles.css';
 
 const EmployeeDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [employee, setEmployee] = useState<Employee | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchEmployee = async () => {
+        const getEmployee = async () => {
             try {
                 const data = await fetchEmployeeById(Number(id));
                 setEmployee(data);
@@ -21,7 +22,7 @@ const EmployeeDetail: React.FC = () => {
             }
         };
 
-        fetchEmployee();
+        getEmployee();
     }, [id]);
 
     if (loading) {
@@ -33,18 +34,18 @@ const EmployeeDetail: React.FC = () => {
     }
 
     if (!employee) {
-        return <div>No employee found</div>;
+        return <div>Employee not found</div>;
     }
 
     return (
-        <div>
-            <h2>Employee Details</h2>
-            <p><strong>ID:</strong> {employee.id}</p>
-            <p><strong>Name:</strong> {employee.firstName} {employee.lastName}</p>
-            <p><strong>Email:</strong> {employee.email}</p>
-            <p><strong>CPF:</strong> {employee.cpf}</p>
-            <p><strong>Phone:</strong> {employee.phone}</p>
-            <p><strong>Manager Name:</strong> {employee.managerName}</p>
+        <div className="employee-detail">
+            <h2>Employee Detail</h2>
+            <input type="text" value={employee.firstName} readOnly />
+            <input type="text" value={employee.lastName} readOnly />
+            <input type="email" value={employee.email} readOnly />
+            <input type="text" value={employee.cpf} readOnly />
+            <input type="text" value={employee.phone ?? ''} readOnly />
+            <input type="text" value={employee.managerName ?? ''} readOnly />
         </div>
     );
 };
