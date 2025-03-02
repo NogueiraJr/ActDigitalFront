@@ -71,6 +71,12 @@ The application interacts with the following API endpoints:
 
 ![image](https://github.com/user-attachments/assets/2834e8b5-707c-48dc-95d4-14af66f2676c)
 
+![image](https://github.com/user-attachments/assets/a754c6b7-6cc4-4687-ad6b-44b237a564f9)
+
+![image](https://github.com/user-attachments/assets/66397ab9-cca9-4e49-bed1-2783f7b005be)
+
+
+
 
 
 
