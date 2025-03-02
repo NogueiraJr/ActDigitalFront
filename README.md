@@ -62,6 +62,16 @@ The application interacts with the following API endpoints:
 - `PUT /api/Employee/{id}` - Update an existing employee
 - `DELETE /api/Employee/{id}` - Delete an employee
 
-## License
+## License MIT
+
+
+![image](https://github.com/user-attachments/assets/3a6f82a5-201e-484a-8211-2b29b852133d)
+
+![image](https://github.com/user-attachments/assets/d1911d16-593e-4b7c-8192-9d19d5c6117d)
+
+![image](https://github.com/user-attachments/assets/2834e8b5-707c-48dc-95d4-14af66f2676c)
+
+
+
 
 This project is licensed under the MIT License.
